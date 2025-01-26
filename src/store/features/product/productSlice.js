@@ -1,15 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+const PRODUCTS = [
+    {category: "Fruits", price: "$1", stocked: true, name: "Apple"},
+    {category: "Fruits", price: "$1", stocked: true, name: "Dragonfruit"},
+    {category: "Fruits", price: "$2", stocked: false, name: "Passionfruit"},
+    {category: "Vegetables", price: "$2", stocked: true, name: "Spinach"},
+    {category: "Vegetables", price: "$4", stocked: false, name: "Pumpkin"},
+    {category: "Vegetables", price: "$1", stocked: true, name: "Peas"}
+];
+
 const initialState = {
     initialValue: 10,
-    dataProduct: [
-        {category: "Frutas", price: "$1", stocked: true, name: "Manzana"},
-        {category: "Frutas", price: "$1", stocked: true, name: "Fruta del dragón"},
-        {category: "Frutas", price: "$2", stocked: false, name: "Maracuyá"},
-        {category: "Verduras", price: "$2", stocked: true, name: "Espinaca"},
-        {category: "Verduras", price: "$4", stocked: false, name: "Calabaza"},
-        {category: "Verduras", price: "$1", stocked: true, name: "Guisantes"}
-    ],
+
 }
 
 export const productSlice = createSlice({
@@ -18,9 +20,11 @@ export const productSlice = createSlice({
     reducers: {
         setInitialValue: (state, payload) => {
             state.initialValue = payload
-        },
+        }
     },
 })
+export const { setInitialValue} = productSlice.actions
 
-export const { setInitialValue } = productSlice.actions
+export {PRODUCTS};
+
 export default productSlice.reducer

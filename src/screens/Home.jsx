@@ -6,7 +6,7 @@ import viteLogo from "../assets/vite.svg";
 import reactLogo from "../assets/react.svg";
 import githubLogo from "../assets/github.svg";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 const Home = () => {
     const count = useSelector((state) => state.counter.value)
