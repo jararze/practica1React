@@ -1,22 +1,24 @@
-import { useState, useEffect } from "react";
+import {useState, useEffect} from "react";
 
 const useForm = (initialState = {}) => {
-    const [formData, setFormData] = useState({ ...initialState });
+    const [formData, setFormData] = useState({...initialState});
 
     useEffect(() => {
-        setFormData({ ...initialState });
+        setFormData({...initialState});
     }, [initialState]);
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
+        const {name, value} = e.target;
+        if (name !== 'module') {
+            setFormData((prev) => ({
+                ...prev,
+                [name]: value,
+            }));
+        }
     };
 
     const resetForm = () => {
-        setFormData({ ...initialState }); // metodo para limpiar el formulario y tener la info para un reingreso al sistema
+        setFormData({...initialState}); // metodo para limpiar el formulario y tener la info para un reingreso al sistema
     };
 
     return {

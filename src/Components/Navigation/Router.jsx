@@ -12,8 +12,8 @@ import { Routes, Route } from "react-router";
 const Router = () => {
     return (
         <Routes>
-            <Route index element={<Home />} />
-            <Route path="landingpage" element={<LandingPage />} />
+            <Route index element={<LandingPage />} />
+            <Route path="home" element={<Home />} />
             <Route path="login" element={<Login />} />
             <Route path="products" element={<Products />} />
             <Route path="think" element={<Think />} />

@@ -17,6 +17,8 @@ const FormWithMotionAndHook = ({titleForm}) => {
 
 
     useEffect(() => {
+        console.log("formData:", formData);
+        console.log("reduxFormState:", reduxFormState);
         setFormData({ ...reduxFormState });
     }, [reduxFormState, setFormData]);
 
@@ -41,7 +43,7 @@ const FormWithMotionAndHook = ({titleForm}) => {
         setShowModal(false);
         resetForm();
     };
-
+    console.log("reduxFormState:", reduxFormState);
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -71,8 +73,8 @@ const FormWithMotionAndHook = ({titleForm}) => {
                                 type="text"
                                 name="module"
                                 value={formData.module}
-                                onChange={handleChange}
-                                required
+                                disabled={true}
+                                readOnly={true}
                                 style={{
                                     width: "60%",
                                     padding: "10px",
@@ -81,6 +83,8 @@ const FormWithMotionAndHook = ({titleForm}) => {
                                     marginLeft: "10px",
                                     border: "1px solid #ccc",
                                     borderRadius: "4px",
+                                    backgroundColor: "#f5f5f5",
+                                    cursor: "not-allowed"
                                 }}
                             />
                         </label>
